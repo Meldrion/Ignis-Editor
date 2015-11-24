@@ -14,20 +14,22 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         ignismain.cpp \
-    editorcanvas.cpp \
+    component/editorcanvas.cpp \
     scene/abstractscene.cpp \
     scene/gamelevelscene.cpp \
     scene/tilesetlayer.cpp \
     scene/abstractlayer.cpp \
-    scene/tile.cpp
+    scene/tile.cpp \
+    component/tilesetcanvas.cpp
 
 HEADERS  += ignismain.h \
-    editorcanvas.h \
+    component/editorcanvas.h \
     interface/activescenelistener.h \
     scene/abstractscene.h \
     scene/gamelevelscene.h \
     scene/tilesetlayer.h \
     scene/abstractlayer.h \
-    scene/tile.h
+    scene/tile.h \
+    component/tilesetcanvas.h
 
 FORMS    += ignismain.ui

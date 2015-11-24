@@ -4,7 +4,7 @@
 #include <QMainWindow>
 #include <QStyle>
 #include <QDesktopWidget>
-#include "editorcanvas.h"
+#include "component/editorcanvas.h"
 
 namespace Ui {
 class IgnisMain;
