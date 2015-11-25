@@ -6,26 +6,39 @@ TilesetDock::TilesetDock(QWidget *parent) :
     ui(new Ui::TilesetDock)
 {
     ui->setupUi(this);
-    this->m_tilesetCanvas = new TilesetCanvas(this->m_tilesetCanvas);
-    this->ui->scrollArea->setWidget(this->m_tilesetCanvas);
 }
 
 TilesetDock::~TilesetDock()
 {
+    deleteAllocatedGUIComponents();
     delete ui;
 }
 
 void TilesetDock::activeSceneChanged(AbstractScene *scene)
 {
+    deleteAllocatedGUIComponents();
     GameLevelScene* game_level_scene = dynamic_cast<GameLevelScene*>(scene);
     if (game_level_scene)
     {
         QVector<Tileset*> tilesets = game_level_scene->getTilesets();
         for (QVector<Tileset*>::iterator it = tilesets.begin();it != tilesets.end();++it)
         {
-            // Not the final code !
-            this->m_tilesetCanvas->setTileset(*it);
+            TilesetWidget* ts_widget = new TilesetWidget(*it,this->ui->tilesetTabber);
+            // Add the new Tileset Widget to the Tabber
+            this->ui->tilesetTabber->addTab(ts_widget,(*it)->getName());
+            // Add the new Tileset Widget to the Vector with all the ts_widgets inside it
+            this->m_tilesetWidgets.append(ts_widget);
         }
+    }
+}
 
+void TilesetDock::deleteAllocatedGUIComponents()
+{
+    this->ui->tilesetTabber->clear();
+    // Delete all the Tileset Canvases that do still exists
+    for (QVector<TilesetWidget*>::iterator it = this->m_tilesetWidgets.begin();
+         it != this->m_tilesetWidgets.end();++it)
+    {
+        delete *it;
     }
 }

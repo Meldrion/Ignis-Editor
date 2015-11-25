@@ -16,20 +16,10 @@
   <widget class="QWidget" name="dockWidgetContents">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="QScrollArea" name="scrollArea">
-      <property name="widgetResizable">
-       <bool>true</bool>
+     <widget class="QTabWidget" name="tilesetTabber">
+      <property name="currentIndex">
+       <number>-1</number>
       </property>
-      <widget class="QWidget" name="scrollAreaWidgetContents">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>0</y>
-         <width>380</width>
-         <height>225</height>
-        </rect>
-       </property>
-      </widget>
      </widget>
     </item>
     <item>

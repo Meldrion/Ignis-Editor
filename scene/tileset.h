@@ -14,6 +14,7 @@ public:
     int getTileSize();
     int getImageUnitWidth();
     int getImageUnitHeight();
+    QString getName();
     void drawTileTo(QPainter* graphics,int sourceX,int sourceY,int destinationX,int destinationY);
     void draw(QPainter* graphics);
 private:
@@ -22,6 +23,7 @@ private:
     int m_image_unit_width;
     int m_image_unit_height;
     int m_tileSize;
+    QString m_name;
 signals:
 
 public slots:

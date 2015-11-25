@@ -1,4 +1,4 @@
-#include "ignismain.h"
+#include "gui/ignismain.h"
 #include <QApplication>
 
 int main(int argc, char *argv[])

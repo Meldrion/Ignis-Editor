@@ -23,7 +23,8 @@ SOURCES += main.cpp\
     component/tilesetcanvas.cpp \
     component/tilesetdock.cpp \
     scene/tileset.cpp \
-    scene/scenemanager.cpp
+    scene/scenemanager.cpp \
+    component/tilesetwidget.cpp
 
 HEADERS  += gui/ignismain.h \
     component/editorcanvas.h \
@@ -36,7 +37,8 @@ HEADERS  += gui/ignismain.h \
     component/tilesetcanvas.h \
     component/tilesetdock.h \
     scene/tileset.h \
-    scene/scenemanager.h
+    scene/scenemanager.h \
+    component/tilesetwidget.h
 
 FORMS    += gui/ignismain.ui \
     component/tilesetdock.ui

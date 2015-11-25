@@ -2,6 +2,7 @@
 
 Tileset::Tileset(QString imagePath, int tileSize)
 {
+    this->m_name = "Untitled";
     this->m_tileSize = tileSize;
     this->m_tilesetImage = new QImage();
     if (this->m_tilesetImage->load(imagePath))
@@ -23,6 +24,11 @@ QString Tileset::getImagePath()
     return m_imagePath;
 }
 
+int Tileset::getTileSize()
+{
+    return this->m_tileSize;
+}
+
 int Tileset::getImageUnitWidth()
 {
     return this->m_image_unit_width;
@@ -33,9 +39,9 @@ int Tileset::getImageUnitHeight()
     return this->m_image_unit_height;
 }
 
-int Tileset::getTileSize()
+QString Tileset::getName()
 {
-    return this->m_tileSize;
+    return this->m_name;
 }
 
 void Tileset::drawTileTo(QPainter *graphics, int sourceX, int sourceY, int destinationX, int destinationY)

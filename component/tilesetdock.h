@@ -2,11 +2,14 @@
 #define TILESETDOCK_H
 
 #include <QDockWidget>
-#include "component/tilesetcanvas.h"
+#include <QScrollArea>
+#include <QVector>
+#include "component/tilesetwidget.h"
 #include "interface/activescenelistener.h"
 #include "scene/gamelevelscene.h"
 
 namespace Ui {
+
 class TilesetDock;
 }
 
@@ -21,7 +24,8 @@ public:
 
 private:
     Ui::TilesetDock *ui;
-    TilesetCanvas* m_tilesetCanvas;
+    QVector<TilesetWidget*> m_tilesetWidgets;
+    void deleteAllocatedGUIComponents();
 };
 
 #endif // TILESETDOCK_H
