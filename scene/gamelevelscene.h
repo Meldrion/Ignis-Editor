@@ -6,14 +6,17 @@
 #include "scene/abstractscene.h"
 #include "scene/abstractlayer.h"
 #include "scene/tilesetlayer.h"
+#include "scene/tileset.h"
 
 class GameLevelScene : public AbstractScene
 {
     int m_unit_size;
     QVector2D* m_game_level_unit_size;
     QVector<AbstractLayer*> m_layers;
+    QVector<Tileset*> m_tilesets;
 
 public:
+
     GameLevelScene();
     ~GameLevelScene();
     int unit_width();
@@ -23,6 +26,10 @@ public:
     void setGameLevelUnitDimension(int unit_width,int  unit_height);
     void addLayer(AbstractLayer* layer);
     void paint(QPainter* graphics);
+
+    void appendTileset(Tileset* tileset);
+    void removeTileset(int index);
+    QVector<Tileset*> getTilesets();
 
 signals:
 

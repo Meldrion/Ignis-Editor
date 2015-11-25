@@ -8,7 +8,7 @@
 #include "interface/activescenelistener.h"
 #include "scene/gamelevelscene.h"
 
-class EditorCanvas : public QWidget , ActiveSceneListener
+class EditorCanvas : public QWidget , public ActiveSceneListener
 {
     Q_OBJECT
 private:

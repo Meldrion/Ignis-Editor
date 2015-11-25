@@ -3,14 +3,6 @@
 EditorCanvas::EditorCanvas(QWidget *parent) : QWidget(parent)
 {
     m_currentScene = 0x0;
-
-    // Dummy Code
-
-    GameLevelScene* tmp = new GameLevelScene();
-    tmp->setGameLevelUnitDimension(50,50);
-    tmp->setUnitSize(32);
-    activeSceneChanged(tmp);
-
 }
 
 EditorCanvas::~EditorCanvas()

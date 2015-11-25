@@ -3,10 +3,11 @@
 GameLevelScene::GameLevelScene()
 {
     this->m_game_level_unit_size = new QVector2D(0,0);
-    this->m_layers.clear();
+
 
     // Dummy Code
     this->addLayer(new TilesetLayer());
+    this->appendTileset(new Tileset("assets/images/desert.png",32));
 }
 
 GameLevelScene::~GameLevelScene()
@@ -55,4 +56,20 @@ void GameLevelScene::paint(QPainter* graphics)
     int realHeight = m_game_level_unit_size->y() * m_unit_size;
 
     graphics->fillRect(0,0,realWidth,realHeight,QBrush(QColor(255,255,255)));
+}
+
+void GameLevelScene::appendTileset(Tileset *tileset)
+{
+    if (!this->m_tilesets.contains(tileset))
+        this->m_tilesets.append(tileset);
+}
+
+void GameLevelScene::removeTileset(int index)
+{
+    this->m_tilesets.remove(index);
+}
+
+QVector<Tileset*> GameLevelScene::getTilesets()
+{
+   return this->m_tilesets;
 }

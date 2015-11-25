@@ -13,16 +13,19 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        ignismain.cpp \
+        gui/ignismain.cpp \
     component/editorcanvas.cpp \
     scene/abstractscene.cpp \
     scene/gamelevelscene.cpp \
     scene/tilesetlayer.cpp \
     scene/abstractlayer.cpp \
     scene/tile.cpp \
-    component/tilesetcanvas.cpp
+    component/tilesetcanvas.cpp \
+    component/tilesetdock.cpp \
+    scene/tileset.cpp \
+    scene/scenemanager.cpp
 
-HEADERS  += ignismain.h \
+HEADERS  += gui/ignismain.h \
     component/editorcanvas.h \
     interface/activescenelistener.h \
     scene/abstractscene.h \
@@ -30,6 +33,13 @@ HEADERS  += ignismain.h \
     scene/tilesetlayer.h \
     scene/abstractlayer.h \
     scene/tile.h \
-    component/tilesetcanvas.h
+    component/tilesetcanvas.h \
+    component/tilesetdock.h \
+    scene/tileset.h \
+    scene/scenemanager.h
 
-FORMS    += ignismain.ui
+FORMS    += gui/ignismain.ui \
+    component/tilesetdock.ui
+
+RESOURCES += \
+    resource/icons.qrc
