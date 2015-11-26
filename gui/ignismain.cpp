@@ -41,10 +41,7 @@ IgnisMain::IgnisMain(QWidget *parent) :
     );
 
     // Dummy Code
-    GameLevelScene* tmp = new GameLevelScene();
-    tmp->setGameLevelUnitDimension(50,50);
-    tmp->setUnitSize(32);
-    this->m_sceneManager->setActiveScene(tmp);
+    this->m_sceneManager->setActiveScene(new GameLevelScene(50,50,32));
 }
 
 IgnisMain::~IgnisMain()

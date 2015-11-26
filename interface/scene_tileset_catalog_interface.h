@@ -7,7 +7,7 @@
 class Scene_Tileset_Catalog_Interface
 {
 public:
-    virtual void tileset_catalog_changed(QVector<Tileset*>* tileset_catalog) = 0;
+    virtual void tileset_catalog_changed(QVector<Tileset*> tileset_catalog) = 0;
 };
 
 #endif // SCENE_TILESET_CATALOG_INTERFACE

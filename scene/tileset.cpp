@@ -46,9 +46,13 @@ QString Tileset::getName()
 
 void Tileset::drawTileTo(QPainter *graphics, int sourceX, int sourceY, int destinationX, int destinationY)
 {
-    graphics->drawImage(QRect(destinationX,destinationY,this->m_tileSize,this->m_tileSize),
-                       *this->m_tilesetImage,
-                       QRect(sourceX,sourceY,this->m_tileSize,this->m_tileSize));
+    graphics->drawImage(QRect(destinationX * this->m_tileSize,
+                              destinationY * this->m_tileSize,
+                              this->m_tileSize,this->m_tileSize),
+                        *this->m_tilesetImage,
+                        QRect(sourceX * this->m_tileSize,
+                              sourceY * this->m_tileSize,
+                              this->m_tileSize,this->m_tileSize));
 }
 
 void Tileset::draw(QPainter *graphics)

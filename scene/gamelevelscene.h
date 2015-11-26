@@ -17,19 +17,19 @@ class GameLevelScene : public Abstract_Scene
     QVector<Tileset*> m_tilesets;
     QVector<Scene_Tileset_Catalog_Interface*> m_tileset_catalog_listeners;
     void fireTilesetCatalogListeners();
+    void setUnitSize(int unitSize);
 
 public:
-
-    GameLevelScene();
+    GameLevelScene(int unit_width,int unit_height,int unit_size);
     ~GameLevelScene();
     int unit_width();
     int unit_height();
     int unit_value();
-    void setUnitSize(int unitSize);
     void setGameLevelUnitDimension(int unit_width,int  unit_height);
     void addLayer(AbstractLayer* layer);
     void paint(QPainter* graphics);
 
+    void addTilesetCatalogListener(Scene_Tileset_Catalog_Interface* listener);
     void appendTileset(Tileset* tileset);
     void removeTileset(int index);
     QVector<Tileset*> getTilesets();
