@@ -2,16 +2,16 @@
 #define SCENEMANAGER_H
 
 #include <QVector>
-#include "interface/activescenelistener.h"
+#include "interface/active_scene_listener.h"
 
 class SceneManager
 {
-    QVector<ActiveSceneListener*> m_active_scene_listeners;
-    AbstractScene* m_current_active_scene;
+    QVector<Active_Scene_Listener*> m_active_scene_listeners;
+    Abstract_Scene* m_current_active_scene;
 public:
     SceneManager();
-    void addActiveSceneListener(ActiveSceneListener* sceneListener);
-    void setActiveScene(AbstractScene* scene);
+    void addActiveSceneListener(Active_Scene_Listener* sceneListener);
+    void setActiveScene(Abstract_Scene* scene);
 
 };
 

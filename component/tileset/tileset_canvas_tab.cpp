@@ -1,6 +1,6 @@
-#include "tilesetwidget.h"
+#include "tileset_canvas_tab.h"
 
-TilesetWidget::TilesetWidget(Tileset* tileset,QWidget* parent):QScrollArea(parent)
+Tileset_Canvas_Tab::Tileset_Canvas_Tab(Tileset* tileset,QWidget* parent):QScrollArea(parent)
 {
     // Needed for the content to able to resize inside the scroll area
     this->setWidgetResizable(true);
@@ -14,7 +14,7 @@ TilesetWidget::TilesetWidget(Tileset* tileset,QWidget* parent):QScrollArea(paren
     this->setLayout(m_layout);
 
     // Create the TilesetCanvas
-    m_tileset_canvas = new TilesetCanvas(this);
+    m_tileset_canvas = new Tileset_Canvas(this);
 
     // Link the Tileset to the Canvas
     m_tileset_canvas->setTileset(tileset);
@@ -23,9 +23,14 @@ TilesetWidget::TilesetWidget(Tileset* tileset,QWidget* parent):QScrollArea(paren
     this->setWidget(m_tileset_canvas);
 }
 
-TilesetWidget::~TilesetWidget()
+Tileset_Canvas_Tab::~Tileset_Canvas_Tab()
 {
     delete m_layout;
     delete m_tileset_canvas;
+}
+
+QSize Tileset_Canvas_Tab::sizeHint() const
+{
+    return QSize(300,0);
 }
 

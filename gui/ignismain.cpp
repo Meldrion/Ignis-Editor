@@ -12,18 +12,23 @@ IgnisMain::IgnisMain(QWidget *parent) :
     this->m_sceneManager = new SceneManager();
 
     // Tileset Dock
-    this->m_tilesetDock = new TilesetDock();
+    this->m_tilesetDock = new Tileset_Dock(this);
+    this->m_sceneManager->addActiveSceneListener(this->m_tilesetDock->getTilesetTabber());
+
+    // Scene tree Dock
+    this->m_sceneTreeDock = new Scene_Tree_Dock(this);
 
     // Create the EditorCanvas
-    this->m_editorCanvas = new EditorCanvas(this->ui->scrollArea);
+    this->m_editorCanvas = new Editor_Canvas(this->ui->scrollArea);
     this->ui->scrollArea->setWidget(this->m_editorCanvas);
 
     // Link the Active Scene Listeners and the Scene Manager
     this->m_sceneManager->addActiveSceneListener(this->m_editorCanvas);
-    this->m_sceneManager->addActiveSceneListener(this->m_tilesetDock);
+    //this->m_sceneManager->addActiveSceneListener(this->m_tilesetDock);
 
     // Add to the Dock
     this->addDockWidget(Qt::LeftDockWidgetArea,this->m_tilesetDock);
+    this->addDockWidget(Qt::LeftDockWidgetArea,this->m_sceneTreeDock);
 
     // Center on Screen
     setGeometry(
@@ -34,7 +39,6 @@ IgnisMain::IgnisMain(QWidget *parent) :
             qApp->desktop()->availableGeometry()
         )
     );
-
 
     // Dummy Code
     GameLevelScene* tmp = new GameLevelScene();

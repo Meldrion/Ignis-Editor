@@ -5,19 +5,19 @@
 #include <QWidget>
 #include <QPainter>
 #include <QDebug>
-#include "interface/activescenelistener.h"
+#include "interface/active_scene_listener.h"
 #include "scene/gamelevelscene.h"
 
-class EditorCanvas : public QWidget , public ActiveSceneListener
+class Editor_Canvas : public QWidget , public Active_Scene_Listener
 {
     Q_OBJECT
 private:
-    AbstractScene* m_currentScene;
+    Abstract_Scene* m_currentScene;
 public:
-    explicit EditorCanvas(QWidget *parent = 0);
-    ~EditorCanvas();
+    explicit Editor_Canvas(QWidget *parent = 0);
+    ~Editor_Canvas();
     void paintEvent(QPaintEvent* paintEvent);
-    void activeSceneChanged(AbstractScene *scene);
+    void activeSceneChanged(Abstract_Scene *scene);
 signals:
 
 public slots:

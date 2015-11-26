@@ -5,11 +5,11 @@
 #include <QPainter>
 #include "scene/tileset.h"
 
-class TilesetCanvas:public QWidget
+class Tileset_Canvas:public QWidget
 {
     Q_OBJECT
 public:
-    explicit TilesetCanvas(QWidget* parent);
+    explicit Tileset_Canvas(QWidget* parent);
     void paintEvent(QPaintEvent *paintEvent);
     void setTileset(Tileset* tileset);
 private:

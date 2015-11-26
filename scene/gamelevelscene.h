@@ -3,17 +3,20 @@
 
 #include <QVector>
 #include <QVector2D>
+#include "interface/scene_tileset_catalog_interface.h"
 #include "scene/abstractscene.h"
 #include "scene/abstractlayer.h"
 #include "scene/tilesetlayer.h"
 #include "scene/tileset.h"
 
-class GameLevelScene : public AbstractScene
+class GameLevelScene : public Abstract_Scene
 {
     int m_unit_size;
     QVector2D* m_game_level_unit_size;
     QVector<AbstractLayer*> m_layers;
     QVector<Tileset*> m_tilesets;
+    QVector<Scene_Tileset_Catalog_Interface*> m_tileset_catalog_listeners;
+    void fireTilesetCatalogListeners();
 
 public:
 
@@ -30,6 +33,7 @@ public:
     void appendTileset(Tileset* tileset);
     void removeTileset(int index);
     QVector<Tileset*> getTilesets();
+
 
 signals:
 

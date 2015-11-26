@@ -1,6 +1,6 @@
 #include "abstractscene.h"
 
-AbstractScene::AbstractScene()
+Abstract_Scene::Abstract_Scene()
 {
 
 }

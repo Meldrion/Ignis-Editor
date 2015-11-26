@@ -1,11 +1,11 @@
-#include "tilesetcanvas.h"
+#include "tileset_canvas.h"
 
-TilesetCanvas::TilesetCanvas(QWidget* parent = 0)
+Tileset_Canvas::Tileset_Canvas(QWidget* parent = 0)
 {
     this->m_tileset = 0x0;
 }
 
-void TilesetCanvas::paintEvent(QPaintEvent *paintEvent)
+void Tileset_Canvas::paintEvent(QPaintEvent *paintEvent)
 {
     QPainter graphics(this);
     graphics.fillRect(0,0,width(),height(),QBrush(QColor(96,96,96)));
@@ -16,7 +16,7 @@ void TilesetCanvas::paintEvent(QPaintEvent *paintEvent)
 }
 
 
-void TilesetCanvas::setTileset(Tileset *tileset)
+void Tileset_Canvas::setTileset(Tileset *tileset)
 {
     this->m_tileset = tileset;
     if (tileset)

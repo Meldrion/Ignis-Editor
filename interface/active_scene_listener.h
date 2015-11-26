@@ -2,10 +2,10 @@
 #define ACTIVESCENELISTENER
 #include "scene/abstractscene.h"
 
-class ActiveSceneListener
+class Active_Scene_Listener
 {
     public:
-        virtual void activeSceneChanged(AbstractScene* scene) = 0;
+        virtual void activeSceneChanged(Abstract_Scene* scene) = 0;
 };
 
 #endif // ACTIVESCENELISTENER

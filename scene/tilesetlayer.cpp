@@ -2,8 +2,9 @@
 
 TilesetLayer::TilesetLayer()
 {
-    m_tilesMatrix = 0x0;
-    setDimension(20,15);
+    this->m_tiles_matrix = 0x0;
+    this->m_tileset_catalog = 0x0;
+    this->setDimension(20,15);
 }
 
 void TilesetLayer::paint(QPainter* graphics)
@@ -15,7 +16,12 @@ void TilesetLayer::setDimension(int unitWidth, int unitHeight)
 {
     this->m_unit_width = unitWidth;
     this->m_unit_height = unitHeight;
-    this->m_tilesMatrix = buildTileMatrixFrom(m_tilesMatrix,unitWidth,unitHeight);
+    this->m_tiles_matrix = buildTileMatrixFrom(m_tiles_matrix,unitWidth,unitHeight);
+}
+
+void TilesetLayer::tileset_catalog_changed(QVector<Tileset *> *tileset_catalog)
+{
+    this->m_tileset_catalog = tileset_catalog;
 }
 
 QVector<QVector<Tile*>*>* TilesetLayer::buildEmptyTileMatrix(int unitWidth,int unitHeight)
@@ -28,7 +34,6 @@ QVector<QVector<Tile*>*>* TilesetLayer::buildEmptyTileMatrix(int unitWidth,int u
         {
             innerVector->append(0x0);
         }
-
         matrix->append(innerVector);
     }
 

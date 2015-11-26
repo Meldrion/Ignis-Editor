@@ -14,34 +14,40 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         gui/ignismain.cpp \
-    component/editorcanvas.cpp \
     scene/abstractscene.cpp \
     scene/gamelevelscene.cpp \
     scene/tilesetlayer.cpp \
     scene/abstractlayer.cpp \
     scene/tile.cpp \
-    component/tilesetcanvas.cpp \
-    component/tilesetdock.cpp \
     scene/tileset.cpp \
     scene/scenemanager.cpp \
-    component/tilesetwidget.cpp
+    component/tileset/tileset_canvas.cpp \
+    component/editor_canvas.cpp \
+    component/tileset/tileset_dock.cpp \
+    component/tileset/tileset_canvas_tab.cpp \
+    component/tileset/tileset_tabber.cpp \
+    component/scenetree/scene_tree.cpp \
+    component/scenetree/scene_tree_dock.cpp
 
 HEADERS  += gui/ignismain.h \
-    component/editorcanvas.h \
-    interface/activescenelistener.h \
     scene/abstractscene.h \
     scene/gamelevelscene.h \
     scene/tilesetlayer.h \
     scene/abstractlayer.h \
     scene/tile.h \
-    component/tilesetcanvas.h \
-    component/tilesetdock.h \
     scene/tileset.h \
     scene/scenemanager.h \
-    component/tilesetwidget.h
+    component/tileset/tileset_canvas.h \
+    component/editor_canvas.h \
+    component/tileset/tileset_dock.h \
+    component/tileset/tileset_canvas_tab.h \
+    component/tileset/tileset_tabber.h \
+    interface/active_scene_listener.h \
+    component/scenetree/scene_tree.h \
+    component/scenetree/scene_tree_dock.h \
+    interface/scene_tileset_catalog_interface.h
 
 FORMS    += gui/ignismain.ui \
-    component/tilesetdock.ui
 
 RESOURCES += \
     resource/icons.qrc

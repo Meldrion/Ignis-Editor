@@ -1,16 +1,16 @@
-#include "editorcanvas.h"
+#include "editor_canvas.h"
 
-EditorCanvas::EditorCanvas(QWidget *parent) : QWidget(parent)
+Editor_Canvas::Editor_Canvas(QWidget *parent) : QWidget(parent)
 {
     m_currentScene = 0x0;
 }
 
-EditorCanvas::~EditorCanvas()
+Editor_Canvas::~Editor_Canvas()
 {
     delete m_currentScene;
 }
 
-void EditorCanvas::paintEvent(QPaintEvent *paintEvent)
+void Editor_Canvas::paintEvent(QPaintEvent *paintEvent)
 {
     QPainter painter(this);
     painter.fillRect(0,0,width(),height(),QBrush(QColor(96,96,96)));
@@ -21,7 +21,7 @@ void EditorCanvas::paintEvent(QPaintEvent *paintEvent)
     }
 }
 
-void EditorCanvas::activeSceneChanged(AbstractScene *scene)
+void Editor_Canvas::activeSceneChanged(Abstract_Scene *scene)
 {
     if (scene)
     {

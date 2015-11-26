@@ -1,12 +1,15 @@
 #ifndef IGNISMAIN_H
 #define IGNISMAIN_H
 
+#include <QDebug>
 #include <QMainWindow>
 #include <QStyle>
 #include <QDesktopWidget>
-#include "component/editorcanvas.h"
-#include "component/tilesetdock.h"
+#include <QShowEvent>
 #include "scene/scenemanager.h"
+#include "component/editor_canvas.h"
+#include "component/tileset/tileset_dock.h"
+#include "component/scenetree/scene_tree_dock.h"
 
 namespace Ui {
 class IgnisMain;
@@ -19,12 +22,11 @@ class IgnisMain : public QMainWindow
 public:
     explicit IgnisMain(QWidget *parent = 0);
     ~IgnisMain();
-
-
 private:
     Ui::IgnisMain *ui;
-    EditorCanvas* m_editorCanvas;
-    TilesetDock* m_tilesetDock;
+    Editor_Canvas* m_editorCanvas;
+    Tileset_Dock* m_tilesetDock;
+    Scene_Tree_Dock* m_sceneTreeDock;
 };
 
 #endif // IGNISMAIN_H

@@ -3,10 +3,10 @@
 
 #include <QPainter>
 
-class AbstractScene
+class Abstract_Scene
 {
 public:
-    AbstractScene();
+    Abstract_Scene();
     virtual void paint(QPainter* graphics) = 0;
 signals:
 

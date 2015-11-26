@@ -47,6 +47,12 @@ void GameLevelScene::setGameLevelUnitDimension(int unit_width, int unit_height)
 
 void GameLevelScene::addLayer(AbstractLayer *layer)
 {
+    if (TilesetLayer* ts_layer = dynamic_cast<TilesetLayer*>(layer))
+    {
+        if (this->m_tileset_catalog_listeners.contains(ts_layer))
+            this->m_tileset_catalog_listeners.append(ts_layer);
+    }
+
     this->m_layers.append(layer);
 }
 
@@ -61,15 +67,29 @@ void GameLevelScene::paint(QPainter* graphics)
 void GameLevelScene::appendTileset(Tileset *tileset)
 {
     if (!this->m_tilesets.contains(tileset))
+    {
         this->m_tilesets.append(tileset);
+        this->fireTilesetCatalogListeners();
+    }
 }
 
 void GameLevelScene::removeTileset(int index)
 {
     this->m_tilesets.remove(index);
+    this->fireTilesetCatalogListeners();
 }
 
 QVector<Tileset*> GameLevelScene::getTilesets()
 {
    return this->m_tilesets;
+}
+
+void GameLevelScene::fireTilesetCatalogListeners()
+{
+    for (QVector<Scene_Tileset_Catalog_Interface*>::iterator it = this->m_tileset_catalog_listeners.begin();
+         it != this->m_tileset_catalog_listeners.end();++it)
+    {
+        Scene_Tileset_Catalog_Interface* stci = *it;
+        stci->tileset_catalog_changed(&this->m_tilesets);
+    }
 }
