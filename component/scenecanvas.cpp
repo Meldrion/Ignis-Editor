@@ -96,7 +96,8 @@ void SceneCanvas::init()
     m_scene->addLayer(mouseCursor);
 
     // Dummy
-    Tileset* desertTileset = new Tileset("desert.png",32);
+    QString base = "/mnt/datadisk/Dropbox/Media/Images/RGSS/Graphics/Tilesets";
+    Tileset* desertTileset = new Tileset(base + "/006-Desert01.png",32);
 
     tileLayer->addTileset(desertTileset);
     tileLayer2->addTileset(desertTileset);
