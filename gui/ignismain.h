@@ -6,8 +6,7 @@
 #include <QStyle>
 #include <QDesktopWidget>
 #include <QShowEvent>
-#include "scene/scenemanager.h"
-#include "component/editor_canvas.h"
+#include "component/scenecanvas.h"
 #include "component/tileset/tileset_dock.h"
 #include "component/scenetree/scene_tree_dock.h"
 
@@ -18,15 +17,17 @@ class IgnisMain;
 class IgnisMain : public QMainWindow
 {
     Q_OBJECT
-    SceneManager* m_sceneManager;
+    //SceneManager* m_sceneManager;
+
 public:
     explicit IgnisMain(QWidget *parent = 0);
     ~IgnisMain();
 private:
     Ui::IgnisMain *ui;
-    Editor_Canvas* m_editorCanvas;
+    //Scene
     Tileset_Dock* m_tilesetDock;
     Scene_Tree_Dock* m_sceneTreeDock;
+    SceneCanvas* m_sceneCanvas;
 };
 
 #endif // IGNISMAIN_H

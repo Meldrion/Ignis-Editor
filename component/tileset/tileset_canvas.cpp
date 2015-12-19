@@ -11,7 +11,7 @@ void Tileset_Canvas::paintEvent(QPaintEvent *paintEvent)
     graphics.fillRect(0,0,width(),height(),QBrush(QColor(96,96,96)));
     if (this->m_tileset)
     {
-        this->m_tileset->draw(&graphics);
+        //this->m_tileset->draw(&graphics);
     }
 }
 
@@ -21,8 +21,8 @@ void Tileset_Canvas::setTileset(Tileset *tileset)
     this->m_tileset = tileset;
     if (tileset)
     {
-        setMinimumWidth(tileset->getImageUnitWidth() * tileset->getTileSize());
-        setMinimumHeight(tileset->getImageUnitHeight() * tileset->getTileSize());
+        //setMinimumWidth(tileset->getImageUnitWidth() * tileset->getTileSize());
+        //setMinimumHeight(tileset->getImageUnitHeight() * tileset->getTileSize());
     }
         else
     {

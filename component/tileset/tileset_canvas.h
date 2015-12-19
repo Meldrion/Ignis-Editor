@@ -3,7 +3,7 @@
 
 #include <QWidget>
 #include <QPainter>
-#include "scene/tileset.h"
+#include "resource/tileset.h"
 
 class Tileset_Canvas:public QWidget
 {

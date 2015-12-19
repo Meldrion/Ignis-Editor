@@ -14,15 +14,17 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         gui/ignismain.cpp \
-    scene/abstractscene.cpp \
-    scene/gamelevelscene.cpp \
-    scene/tilesetlayer.cpp \
-    scene/abstractlayer.cpp \
-    scene/tile.cpp \
-    scene/tileset.cpp \
-    scene/scenemanager.cpp \
+    resource/scene/abstractscenelayer.cpp \
+    resource/scene/tilelayer.cpp \
+    resource/scene/scenebackgroundwhitelayer.cpp \
+    resource/scene/mousecursorlayer.cpp \
+    resource/scene/mousecursor.cpp \
+    resource/scene/tiledata.cpp \
+    resource/scene/scene.cpp \
+    resource/tileset.cpp \
+    rendering/tilerenderer.cpp \
     component/tileset/tileset_canvas.cpp \
-    component/editor_canvas.cpp \
+    component/scenecanvas.cpp \
     component/tileset/tileset_dock.cpp \
     component/tileset/tileset_canvas_tab.cpp \
     component/tileset/tileset_tabber.cpp \
@@ -30,22 +32,22 @@ SOURCES += main.cpp\
     component/scenetree/scene_tree_dock.cpp
 
 HEADERS  += gui/ignismain.h \
-    scene/abstractscene.h \
-    scene/gamelevelscene.h \
-    scene/tilesetlayer.h \
-    scene/abstractlayer.h \
-    scene/tile.h \
-    scene/tileset.h \
-    scene/scenemanager.h \
+    resource/scene/abstractscenelayer.h \
+    resource/scene/tilelayer.h \
+    resource/scene/scenebackgroundwhitelayer.h \
+    resource/scene/mousecursorlayer.h \
+    resource/scene/mousecursor.h \
+    resource/scene/tiledata.h \
+    resource/scene/scene.h \
+    resource/tileset.h \
+    rendering/tilerenderer.h \
     component/tileset/tileset_canvas.h \
-    component/editor_canvas.h \
+    component/scenecanvas.h \
     component/tileset/tileset_dock.h \
     component/tileset/tileset_canvas_tab.h \
     component/tileset/tileset_tabber.h \
-    interface/active_scene_listener.h \
     component/scenetree/scene_tree.h \
     component/scenetree/scene_tree_dock.h \
-    interface/scene_tileset_catalog_interface.h
 
 FORMS    += gui/ignismain.ui \
 

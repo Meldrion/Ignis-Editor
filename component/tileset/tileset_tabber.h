@@ -3,15 +3,15 @@
 
 #include <QTabWidget>
 #include <QVector>
-#include "interface/active_scene_listener.h"
-#include "scene/gamelevelscene.h"
+//#include "interface/active_scene_listener.h"
+//#include "scene/gamelevelscene.h"
 #include "component/tileset/tileset_canvas_tab.h"
 
-class Tileset_Tabber : public QTabWidget , public Active_Scene_Listener
+class Tileset_Tabber : public QTabWidget
 {
 public:
     Tileset_Tabber(QWidget* parent = 0);
-    void activeSceneChanged(Abstract_Scene *scene);
+    //void activeSceneChanged(Abstract_Scene *scene);
     QSize sizeHint() const;
 private:
     void deleteAllocatedGUIComponents();

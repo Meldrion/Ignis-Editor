@@ -10,6 +10,7 @@ QSize Tileset_Tabber::sizeHint() const
     return QSize(300,350);
 }
 
+/*
 void Tileset_Tabber::activeSceneChanged(Abstract_Scene* scene)
 {
     this->deleteAllocatedGUIComponents();
@@ -26,7 +27,7 @@ void Tileset_Tabber::activeSceneChanged(Abstract_Scene* scene)
             this->m_tileset_tabs.append(ts_tab);
         }
     }
-}
+}*/
 
 void Tileset_Tabber::deleteAllocatedGUIComponents()
 {
