@@ -51,7 +51,7 @@ void SceneCanvas::scrollContentsBy(int dx, int dy)
     if (m_scene)
     {
         qreal scale = qPow(qreal(2), (zoomValue - 250) / qreal(50));
-        if (scale < 0.2) {scale = 0.2;}
+        if (scale < 0.25) {scale = 0.25;}
         int tX = this->horizontalScrollBar()->value();
         int tY = this->verticalScrollBar()->value();
         this->m_scene->changeViewport(QPointF(tX,tY),scale);
@@ -62,7 +62,7 @@ void SceneCanvas::scrollContentsBy(int dx, int dy)
 void SceneCanvas::setupMatrix()
 {
     qreal scale = qPow(qreal(2), (zoomValue - 250) / qreal(50));
-    if (scale < 0.2) {scale = 0.2;}
+    if (scale < 0.25) {scale = 0.25;}
 
     int tX = this->horizontalScrollBar()->value();
     int tY = this->verticalScrollBar()->value();
@@ -96,8 +96,10 @@ void SceneCanvas::init()
     m_scene->addLayer(mouseCursor);
 
     // Dummy
-    QString base = "/mnt/datadisk/Dropbox/Media/Images/RGSS/Graphics/Tilesets";
-    Tileset* desertTileset = new Tileset(base + "/006-Desert01.png",32);
+    QString base = "/mnt/datadisk/Dropbox/Media/Images/RGSS/Graphics/Tilesets/"; // Base Linux
+    //QString filename = "006-Desert01.png";
+    QString filename = "046-Cave04.png";
+    Tileset* desertTileset = new Tileset(base + filename,32);
 
     tileLayer->addTileset(desertTileset);
     tileLayer2->addTileset(desertTileset);
@@ -105,7 +107,7 @@ void SceneCanvas::init()
     tileLayer4->addTileset(desertTileset);
     mouseCursor->setCurrentTileset(desertTileset);
 
-    tileLayer->setBlendingOutVisible(true);
+    //tileLayer->setBlendingOutVisible(true);
 
     int tX = 0;
     int tY = 0;
@@ -117,7 +119,8 @@ void SceneCanvas::init()
         {
             tY = (tY == 14)?0:++tY;
 
-            tileLayer->addTileAt(i,j,0,1,0);
+            tileLayer->addTileAt(i,j,0,0,0);
+            tileLayer2->addTileAt(i,j,0,1,1);
 
             // Worst Case
             //tileLayer->addTileAt(i,j,0,tX,tY);
@@ -131,4 +134,15 @@ void SceneCanvas::init()
     this->setScene(m_scene);
     m_scene->setSceneRect(0,0,tileDim * mapWidth,tileDim * mapHeight);
     this->centerOn(0,0);
+}
+
+
+void SceneCanvas::setOpenGLEnabled(bool flag)
+{
+    if (flag)
+    {
+        QGLWidget* glWidget = new QGLWidget(QGLFormat(QGL::SampleBuffers));
+        glWidget->setMouseTracking(true);
+        this->setViewport(glWidget);
+    }
 }

@@ -22,6 +22,7 @@ IgnisMain::IgnisMain(QWidget *parent) :
     this->m_sceneCanvas = new SceneCanvas();
     this->setCentralWidget(this->m_sceneCanvas);
     this->m_sceneCanvas->init();
+    this->m_sceneCanvas->setOpenGLEnabled(true);
 
     //this->ui->centralWidget->set
     //this->ui->scrollArea->setWidget(this->m_editorCanvas);

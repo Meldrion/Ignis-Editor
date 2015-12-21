@@ -35,7 +35,7 @@ QRectF AbstractSceneLayer::boundingRect() const
 
 void AbstractSceneLayer::setZoom(float zoom)
 {
-    if (zoom < 0.2f) {zoom = 0.2f;}
+    if (zoom < 0.25f) {zoom = 0.25f;}
     m_zoom = zoom;
 }
 

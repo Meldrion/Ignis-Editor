@@ -10,6 +10,7 @@
 #include <QDebug>
 #include <QApplication>
 #include <QScrollBar>
+#include <QGLWidget>
 #include "resource/scene/scene.h"
 #include "resource/scene/tilelayer.h"
 #include "resource/scene/mousecursorlayer.h"
@@ -30,6 +31,7 @@ public:
     void scrollContentsBy(int dx, int dy);
     void setupMatrix();
     void init();
+    void setOpenGLEnabled(bool flag);
 signals:
 
 public slots:
