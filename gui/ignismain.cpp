@@ -19,8 +19,10 @@ IgnisMain::IgnisMain(QWidget *parent) :
     this->m_sceneTreeDock = new Scene_Tree_Dock(this);
 
     // Create the EditorCanvas
-    this->m_sceneCanvas = new SceneCanvas(this->centralWidget());
+    this->m_sceneCanvas = new SceneCanvas();
+    this->setCentralWidget(this->m_sceneCanvas);
     this->m_sceneCanvas->init();
+
     //this->ui->centralWidget->set
     //this->ui->scrollArea->setWidget(this->m_editorCanvas);
 

@@ -105,6 +105,8 @@ void SceneCanvas::init()
     tileLayer4->addTileset(desertTileset);
     mouseCursor->setCurrentTileset(desertTileset);
 
+    tileLayer->setBlendingOutVisible(true);
+
     int tX = 0;
     int tY = 0;
 

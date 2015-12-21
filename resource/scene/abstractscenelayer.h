@@ -20,12 +20,14 @@ namespace Ignis {
             void mouseMoveEvent(QGraphicsSceneMouseEvent *event);
             void mousePressEvent(QGraphicsSceneMouseEvent *event);
             void mouseReleaseEvent(QGraphicsSceneMouseEvent *event);
+            void setBlendingOutVisible(bool flag);
         protected:
             int m_unit_width;
             int m_unit_height;
             int m_unit_size;
             QPointF m_startPosition;
             float m_zoom;
+            QGraphicsRectItem* m_dark_rectangle;
         signals:
 
         public slots:
